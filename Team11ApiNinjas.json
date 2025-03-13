@@ -1,0 +1,1546 @@
+[
+  {
+    "requests": [
+      {
+        "name": "UserLogin",
+        "data": [
+          {
+            "endpoint": "/login",
+            "EmailId": "sdetorganizer@gmail.com",
+            "password": "March@2025",
+            "expectedStatusCode": 200,
+            "expectedStatusLine": "OK"
+          },
+          {
+            "endpoint": "/login",
+            "EmailId": "sdet@gmail.com",
+            "password": "March2025",
+            "expectedStatusCode": 400,
+            "expectedStatusLine": "Bad Request"
+          },
+          {
+            "endpoint": "/login",
+            "EmailId": "sdetorganizer@gmail.com",
+            "password": "March@202",
+            "expectedStatusCode": 400,
+            "expectedStatusLine": "Bad Request"
+          },
+          {
+            "endpoint": "/login",
+            "EmailId": "",
+            "password": "March@2025",
+            "expectedStatusCode": 400,
+            "expectedStatusLine": "Bad Request"
+          },
+          {
+            "endpoint": "/login",
+            "EmailId": "sdetorganizer@gmail.com",
+            "password": "",
+            "expectedStatusCode": 400,
+            "expectedStatusLine": "Bad Request"
+          },
+          {
+            "endpoint": "/login",
+            "EmailId": "",
+            "password": "",
+            "expectedStatusCode": 400,
+            "expectedStatusLine": "Bad Request"
+          },
+          {
+            "EmailId": "sdetorganizer@gmail.com",
+            "password": "March$2025",
+            "expectedStatusCode": 400,
+            "expectedStatusLine": "Bad Request"
+          },
+          {
+            "EmailId": "sdetorganizer@gmail.com",
+            "password": "marc",
+            "expectedStatusCode": 400,
+            "expectedStatusLine": "Bad Request"
+          }
+        ]
+      },
+      {
+        "name": "CreateNewProgram-201",
+        "data": [
+          {
+            "endpoint": "saveprogram",
+            "programName": "program-TenthAprilTwohundredtwentyfff",
+            "programDescription": "Test Description",
+            "programStatus": "Active"
+          }
+        ]
+      },
+      {
+        "name": "CreateNewProgram-201-1",
+        "data": [
+          {
+            "endpoint": "saveprogram",
+            "programName": "program-ToBeDeletedthreehundredfff",
+            "programDescription": "electronicTest",
+            "programStatus": "Active"
+          }
+        ]
+      },
+      {
+        "name": "GetAllPrograms-200",
+        "data": [
+          {
+            "endpoint": "allPrograms"
+          }
+        ]
+      },
+      {
+        "name": "GetProgramsWithUsers-200",
+        "data": [
+          {
+            "endpoint": "allProgramsWithUsers"
+          }
+        ]
+      },
+      {
+        "name": "GetProgramByProgramID-200",
+        "data": [
+          {
+            "endpoint": "programs/{{programId}}"
+          }
+        ]
+      },
+      {
+        "name": "GetProgramByProgramID-404",
+        "data": [
+          {
+            "endpoint": "programs/{{programIdInvalid}}",
+            "programIdInvalid": "1"
+          }
+        ]
+      },
+      {
+        "name": "UpdateProgramByProgramName-200",
+        "data": [
+          {
+            "endpoint": "program/{{programName}}",
+            "programName": "program-TenthAprilTwohundredtwentyfff",
+            "programUpdatedDescription": "electronicTestUpdate-12",
+            "programStatus": "Active"
+          }
+        ]
+      },
+      {
+        "name": "UpdateProgramByProgramName-404",
+        "data": [
+          {
+            "endpoint": "program/{{programNameInvalid}}",
+            "programName": "program-TenthAprilTwenty",
+            "programUpdatedDescription": "electronicTestUpdate-1",
+            "programStatus": "Active"
+          }
+        ]
+      },
+      {
+        "name": "UpdateProgramByProgramName-400",
+        "data": [
+          {
+            "endpoint": "program/{{programName}}",
+            "programName": "program-TenthAprilTwenty",
+            "programUpdatedDescription": "electronicTestUpdate-1",
+            "programStatus": "Active"
+          }
+        ]
+      },
+      {
+        "name": "UpdateProgramByProgramID-200",
+        "data": [
+          {
+            "endpoint": "putprogram/{{programId}}",
+            "programUpdatedDescription": "electronicTestUpdate-28",
+            "programStatus": "Active"
+          }
+        ]
+      },
+      {
+        "name": "UpdateProgramByProgramID-404",
+        "data": [
+          {
+            "endpoint": "putprogram/{{programIdInvalid}}",
+            "programStatus": "Active",
+            "programIdInvalid": "1"
+          }
+        ]
+      },
+      {
+        "name": "UpdateProgramByProgramID-400",
+        "data": [
+          {
+            "endpoint": "putprogram/{{programId}}"
+          }
+        ]
+      },
+      {
+        "name": "DeleteProgramByProgramID-404",
+        "data": [
+          {
+            "endpoint": "deletebyprogid/{{programIdInvalid}}",
+            "programIdInvalid": "1"
+          }
+        ]
+      },
+      {
+        "name": "DeleteProgramByProgramID-200",
+        "data": [
+          {
+            "endpoint": "deletebyprogid/{{programId}}"
+          }
+        ]
+      },
+      {
+        "name": "DeleteProgramByProgramName-200",
+        "data": [
+          {
+            "endpoint": "deletebyprogname/{{programName}}",
+            "programName": "program-ToBeDeletedthreehundred"
+          }
+        ]
+      },
+      {
+        "name": "DeleteProgramByProgramName-404",
+        "data": [
+          {
+            "endpoint": "deletebyprogname/{{programNameInvalid}}",
+            "programNameInvalid": "a"
+          }
+        ]
+      },
+      {
+        "name": "UpdateProgramByProgramName-404",
+        "data": [
+          {
+            "endpoint": "deletebyprogname/{{programNameInvalid}}",
+            "programStatus": "Active",
+            "programNameInvalid": "a"
+          }
+        ]
+      },
+      {
+        "name": "GetAllBatches",
+        "data": [
+          {
+            "endpoint": "batches",
+            "statuscode": 200,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "CreateNewBatches",
+        "data": [
+          {
+            "endpoint": "batches",
+            "statuscode": 201,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "batchName": "Elecrolytedigitaltwothreefff",
+            "batchDescription": "test electronic356",
+            "batchStatus": "Active",
+            "batchNoOfClasses": 10
+          }
+        ]
+      },
+      {
+        "name": "GetBatchdetailsbyProgramID",
+        "data": [
+          {
+            "endpoint": "batches/program",
+            "statuscode": 200,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "UpdateBatchdetails",
+        "data": [
+          {
+            "endpoint": "batches",
+            "statuscode": 200,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "batchName": "Electrolytedigitalmediaffff",
+            "batchDescription": "testelecic",
+            "batchStatus": "Active",
+            "batchNoOfClasses": 10
+          }
+        ]
+      },
+      {
+        "name": "GetDetailsbyBatchName",
+        "data": [
+          {
+            "endpoint": "batches/batchName",
+            "statuscode": 200,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "GetBatchdetailsByBatchID",
+        "data": [
+          {
+            "endpoint": "batches/batchId",
+            "statuscode": 200,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "CreateNewBatchesInvalid",
+        "data": [
+          {
+            "endpoint": "bach",
+            "statuscode": 404,
+            "Connection": "keep-alive",
+            "Accept": "application/json",
+            "batchName": "Eler",
+            "batchDescription": "test electronic356",
+            "batchStatus": "Active",
+            "batchNoOfClasses": 10
+          },
+          {
+            "endpoint": "batches",
+            "statuscode": 401,
+            "Connection": "keep-alive",
+            "Accept": "application/json",
+            "batchName": " ",
+            "batchDescription": "test electronic356",
+            "batchStatus": "Active",
+            "batchNoOfClasses": 10
+          },
+          {
+            "endpoint": "batches",
+            "statuscode": 401,
+            "Connection": "keep-alive",
+            "Accept": "application/json",
+            "batchName": "elvj",
+            "batchDescription": "test electronic356",
+            "batchStatus": " ",
+            "batchNoOfClasses": 10
+          },
+          {
+            "endpoint": "batches",
+            "statuscode": 401,
+            "Connection": "keep-alive",
+            "Accept": "application/json",
+            "batchName": "elej",
+            "batchDescription": "test electronic356",
+            "batchStatus": "Active",
+            "batchNoOfClasses": " "
+          }
+        ]
+      },
+      {
+        "name": "GetBatchdetailsbyProgramIDInvalid",
+        "data": [
+          {
+            "endpoint": "batches/program",
+            "statuscode": 404,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "programIDInv": 5678
+          },
+          {
+            "endpoint": "batches/progr",
+            "statuscode": 404,
+            "Connection": "keep-alive",
+            "Content-Type": "text/plain;charset=UTF-8"
+          }
+        ]
+      },
+      {
+        "name": "UpdateBatchdetailsInvalid",
+        "data": [
+          {
+            "endpoint": "bach",
+            "statuscode": 404,
+            "Connection": "keep-alive",
+            "Content-Type": "text/plain;charset=UTF-8",
+            "batchName": "Ele",
+            "batchDescription": "test electronic356",
+            "batchStatus": "Active",
+            "batchNoOfClasses": 10
+          },
+          {
+            "endpoint": "batches",
+            "statuscode": 401,
+            "Connection": "keep-alive",
+            "Accept": "application/json",
+            "batchName": " ",
+            "batchDescription": "test electronic356",
+            "batchStatus": "Active",
+            "batchNoOfClasses": 10
+          },
+          {
+            "endpoint": "batches",
+            "statuscode": 401,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "batchName": "vjk",
+            "batchDescription": " ",
+            "batchStatus": "Active",
+            "batchNoOfClasses": 10
+          },
+          {
+            "endpoint": "batches",
+            "statuscode": 401,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "batchName": "vjk",
+            "batchDescription": "test electronic356",
+            "batchStatus": " ",
+            "batchNoOfClasses": 10
+          },
+          {
+            "endpoint": "batches",
+            "statuscode": 401,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "batchName": "vjk",
+            "batchDescription": "test electronic356",
+            "batchStatus": "Active ",
+            "batchNoOfClasses": ""
+          }
+        ]
+      },
+      {
+        "name": "GetDetailsbyBatchNameInvalid",
+        "data": [
+          {
+            "endpoint": "batches/batchNa",
+            "statuscode": 404,
+            "Connection": "keep-alive",
+            "Content-Type": "text/plain;charset=UTF-8"
+          },
+          {
+            "endpoint": "batches/batchName",
+            "statuscode": 404,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "batchNameInv": "gfksdhfg"
+          }
+        ]
+      },
+      {
+        "name": "GetBatchdetailsByBatchIDInvalid",
+        "data": [
+          {
+            "endpoint": "batches/batchId",
+            "statuscode": 404,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "batchIdInv": "6979"
+          },
+          {
+            "endpoint": "batches/batch",
+            "statuscode": 404,
+            "Connection": "keep-alive",
+            "Content-Type": "text/plain;charset=UTF-8"
+          }
+        ]
+      },
+      {
+        "name": "DeleteExistingBatch",
+        "data": [
+          {
+            "endpoint": "batches",
+            "statuscode": 200,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "DeleteExistingBatchInvalid",
+        "data": [
+          {
+            "endpoint": "batches",
+            "statuscode": 404,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "batchIdInv": "6979"
+          },
+          {
+            "endpoint": "batches/batch",
+            "statuscode": 404,
+            "Connection": "keep-alive",
+            "Content-Type": "text/plain;charset=UTF-8"
+          }
+        ]
+      },
+      {
+        "name": "CreateUserWithRole",
+        "data": [
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "ValidDataWithR03ForCreateUser",
+            "userComments": "New User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "Jon",
+            "userLastName": "Joseph",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userMiddleName": "noel",
+            "userPhoneNumber": "+91 1236664670",
+            "userRoleMaps": [
+              {
+                "roleId": "R03",
+                "userRoleStatus": "Active"
+              }
+            ],
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "userLogin": {
+              "loginStatus": "Inactive",
+              "userLoginEmail": "Ninja@gmail.com"
+            },
+            "expStatuscode": 201,
+            "expContentType": "application/json"
+          },
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "ValidDataWithR02ForCreateUser",
+            "userComments": "New User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "Jon",
+            "userLastName": "Joseph",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userMiddleName": "noel",
+            "userPhoneNumber": "+91 1299117870",
+            "userRoleMaps": [
+              {
+                "roleId": "R02",
+                "userRoleStatus": "active"
+              }
+            ],
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "userLogin": {
+              "loginStatus": "active",
+              "userLoginEmail": "Ninja@gmail.com"
+            },
+            "expStatuscode": 201,
+            "expContentType": "application/json"
+          },
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "ValidDataWithR01ForCreateUser",
+            "userComments": "New User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "Jon",
+            "userLastName": "Joseph",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userMiddleName": "noel",
+            "userPhoneNumber": "+91 1777567870",
+            "userRoleMaps": [
+              {
+                "roleId": "R01",
+                "userRoleStatus": "active"
+              }
+            ],
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "userLogin": {
+              "loginStatus": "active",
+              "userLoginEmail": "Ninja@gmail.com"
+            },
+            "expStatuscode": 201,
+            "expContentType": "application/json"
+          },
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "CreatingUserWithExistingPhoneNum",
+            "userFirstName": "Jon",
+            "userLastName": "Joseph",
+            "userPhoneNumber": "+91 1236664670",
+            "userRoleMaps": [
+              {
+                "roleId": "R01",
+                "userRoleStatus": "Active"
+              }
+            ],
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "expStatuscode": 400,
+            "expContentType": "application/json"
+          },
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "invalid_firstname_empty",
+            "userComments": "New User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "",
+            "userLastName": "Joseph",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userMiddleName": "noel",
+            "userPhoneNumber": "+91 1299117870",
+            "userRoleMaps": [
+              {
+                "roleId": "R01",
+                "userRoleStatus": "active"
+              }
+            ],
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "userLogin": {
+              "loginStatus": "active",
+              "userLoginEmail": "Ninja@gmail.com"
+            },
+            "expStatuscode": 400,
+            "expMessage": [
+              "userFirstName must contain two or more alphabets only",
+              "User First Name is cannot be null or empty"
+            ],
+            "expContentType": "application/json"
+          },
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "invalid_lastName_empty",
+            "userComments": "New User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "Joseph",
+            "userLastName": "",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userMiddleName": "noel",
+            "userPhoneNumber": "+91 1299117870",
+            "userRoleMaps": [
+              {
+                "roleId": "R01",
+                "userRoleStatus": "active"
+              }
+            ],
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "userLogin": {
+              "loginStatus": "active",
+              "userLoginEmail": "Ninja@gmail.com"
+            },
+            "expStatuscode": 400,
+            "expMessage": "User Last Name is cannot be null or empty",
+            "expContentType": "application/json"
+          },
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "PhoneNumber_empty",
+            "userComments": "New User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "jo",
+            "userLastName": "Joseph",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userMiddleName": "noel",
+            "userPhoneNumber": "",
+            "userRoleMaps": [
+              {
+                "roleId": "R01",
+                "userRoleStatus": "active"
+              }
+            ],
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "userLogin": {
+              "loginStatus": "active",
+              "userLoginEmail": "Ninja@gmail.com"
+            },
+            "expStatuscode": 400,
+            "expMessage": " empty",
+            "expContentType": "application/json"
+          },
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "userLinkedinUrl_empty",
+            "userComments": "New User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "Raj",
+            "userLastName": "Joseph",
+            "userLinkedinUrl": "",
+            "userLocation": "PA",
+            "userMiddleName": "noel",
+            "userPhoneNumber": "+91 1299117870",
+            "userRoleMaps": [
+              {
+                "roleId": "R01",
+                "userRoleStatus": "active"
+              }
+            ],
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "userLogin": {
+              "loginStatus": "active",
+              "userLoginEmail": "Ninja@gmail.com"
+            },
+            "expStatuscode": 400,
+            "expMessage": "userLinkedinUrlmust contain www.linkedin.com",
+            "expContentType": "application/json"
+          },
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "roleId_empty",
+            "userComments": "New User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "Jon",
+            "userLastName": "Joseph",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userMiddleName": "noel",
+            "userPhoneNumber": "+91 1236664670",
+            "userRoleMaps": [
+              {
+                "roleId": "",
+                "userRoleStatus": "Active"
+              }
+            ],
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "userLogin": {
+              "loginStatus": "Inactive",
+              "userLoginEmail": "Ninja@gmail.com"
+            },
+            "expStatuscode": 400,
+            "expContentType": "application/json",
+            "expMessage": "roleId cannot be null or empty"
+          },
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "emailid_empty",
+            "userComments": "New User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "Jon",
+            "userLastName": "Joseph",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userMiddleName": "noel",
+            "userPhoneNumber": "+91 1236664670",
+            "userRoleMaps": [
+              {
+                "roleId": "R01",
+                "userRoleStatus": ""
+              }
+            ],
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "userLogin": {
+              "loginStatus": "Inactive",
+              "userLoginEmail": ""
+            },
+            "expStatuscode": 400,
+            "expContentType": "application/json",
+            "expMessage": "userRoleStatus cannot be null or empty"
+          },
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "userVisaStatus_empty",
+            "userComments": "New User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "Jon",
+            "userLastName": "Joseph",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userMiddleName": "noel",
+            "userPhoneNumber": "+91 1236664670",
+            "userRoleMaps": [
+              {
+                "roleId": "R03",
+                "userRoleStatus": "Active"
+              }
+            ],
+            "userTimeZone": "EST",
+            "userVisaStatus": "",
+            "userLogin": {
+              "loginStatus": "Inactive",
+              "userLoginEmail": "Ninja@gmail.com"
+            },
+            "expStatuscode": 400,
+            "expContentType": "application/json",
+            "expMessage": "userVisaStatus cannot be null or empty"
+          },
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "userTimeZone_empty",
+            "userComments": "New User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "Jon",
+            "userLastName": "Joseph",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userMiddleName": "noel",
+            "userPhoneNumber": "+91 1236664670",
+            "userRoleMaps": [
+              {
+                "roleId": "R03",
+                "userRoleStatus": "Active"
+              }
+            ],
+            "userTimeZone": "",
+            "userVisaStatus": "H4",
+            "userLogin": {
+              "loginStatus": "Inactive",
+              "userLoginEmail": "Ninja@gmail.com"
+            },
+            "expStatuscode": 400,
+            "expContentType": "application/json",
+            "expMessage": "Failed to create user, as 'TimeZone' is invalid !!"
+          }
+        ]
+      },
+      {
+        "name": "GetAllUsers",
+        "data": [
+          {
+            "endpoint": "users",
+            "scenario": "GetAllUsersWithValidUsers",
+            "expStatuscode": 200,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "GetAllUsersWithRoles",
+        "data": [
+          {
+            "endpoint": "users/roles",
+            "scenario": "GetAllUsersWithValidRoles",
+            "expStatuscode": 200,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "GetUserInformationByUserId",
+        "data": [
+          {
+            "endpoint": "users/{{userId}}",
+            "scenario": "GetUserInformationWithNewuserId",
+            "expStatuscode": 200,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "UpdateUserRoleProgramBatchstatus",
+        "data": [
+          {
+            "endpoint": "users/roleProgramBatchStatus/{{userId}}",
+            "scenario": "UpdateUserRoleProgramBatchstatusWithNewuserId",
+            "roleId": "R02",
+            "userRoleProgramBatches": [
+              {
+                "userRoleProgramBatchStatus": "Active"
+              }
+            ],
+            "expStatuscode": 200,
+            "expMessage": "User {userId} has been successfully assigned to Program/Batch(es)",
+            "expContentType": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "GetUserBatchIdByUserId",
+        "data": [
+          {
+            "endpoint": "users/user/{{userId}}",
+            "scenario": "GetUserBatchIdWithNewuserId",
+            "expStatuscode": 200,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "GetUsersByRoleIdV2",
+        "data": [
+          {
+            "endpoint": "v2/users",
+            "scenario": "GetAllUsersWithFacets/Filters",
+            "expStatuscode": 200,
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "UpdateUser",
+        "data": [
+          {
+            "endpoint": "users/{{userId}}",
+            "scenario": "UpdateUser",
+            "userComments": "Updated User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "Jon",
+            "userLastName": "Joseph",
+            "userMiddleName": "noel",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userLoginEmail": "qaengineer123@gmail.com",
+            "userPhoneNumber": "+91 1236664670",
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "expStatuscode": 200,
+            "expContentType": "application/json"
+          },
+          {
+            "endpoint": "users/{{userId}}",
+            "scenario": "UpdateUserWithEmpty_fName",
+            "userComments": "Updated User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "",
+            "userLastName": "Joseph",
+            "userMiddleName": "noel",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userLoginEmail": "qaengineer123@gmail.com",
+            "userPhoneNumber": "+91 1236664670",
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "expStatuscode": 400,
+            "expContentType": "application/json"
+          },
+          {
+            "endpoint": "users/{{userId}}",
+            "scenario": "UpdateUserWithEmpty_lName",
+            "userComments": "Updated User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "Jon",
+            "userLastName": "",
+            "userMiddleName": "noel",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userLoginEmail": "qaengineer123@gmail.com",
+            "userPhoneNumber": "+91 1236664670",
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "expStatuscode": 400,
+            "expContentType": "application/json"
+          },
+          {
+            "endpoint": "users/{{userId}}",
+            "scenario": "UpdateUserWithExisting_PhoneNum",
+            "userComments": "Updated User comments",
+            "userEduPg": "MSc",
+            "userEduUg": "BTech",
+            "userFirstName": "Jon",
+            "userLastName": "Joseph",
+            "userMiddleName": "noel",
+            "userLinkedinUrl": "www.linkedin.com",
+            "userLocation": "PA",
+            "userLoginEmail": "qaengineer123@gmail.com",
+            "userPhoneNumber": "+91 1236664670",
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "expStatuscode": 400,
+            "expContentType": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "UpdateUserRoleID",
+        "data": [
+          {
+            "endpoint": "users/roleId/{{userId}}",
+            "scenario": "UpdateUserRoleIdWithNewuserId",
+            "userRoleList": [
+              {
+                "roleId": "R01",
+                "userRoleStatus": "Active"
+              }
+            ],
+            "expStatuscode": 200,
+            "expMessage": "Role Id Updated for User: {userId}",
+            "expContentType": "text/plain"
+          }
+        ]
+      },
+      {
+        "name": "UpdateUserLoginStatus",
+        "data": [
+          {
+            "endpoint": "/users/userLogin/{{userId}}",
+            "scenario": "UpdateUserLoginStatusWithNewuserId",
+            "loginStatus": "Active",
+            "password": "March@2025",
+            "status": "Inactive",
+            "userLoginEmail": "getinCode@gmail.com",
+            "expStatuscode": 200,
+            "expMessage": "UserLoginEmail/Status Updated for User: {userId}",
+            "expContentType": "text/plain"
+          },
+          {
+            "endpoint": "/users/userLogin/{{userId}}",
+            "scenario": "UpdateUserLoginStatusWithNewuserId2",
+            "loginStatus": "Active",
+            "password": "March@2025",
+            "status": "Active",
+            "userLoginEmail": "getinCode@gmail.com",
+            "expStatuscode": 200,
+            "expMessage": "UserLoginEmail/Status Updated for User: {userId}",
+            "expContentType": "text/plain"
+          }
+        ]
+      },
+      {
+        "name": "DeleteUserByUserId",
+        "data": [
+          {
+            "endpoint": "users/{{userId}}",
+            "scenario": "DeleteUserWithNewuserId",
+            "statuscode": 200,
+            "Content-Type": "application/json"
+          },
+          {
+            "endpoint": "users/{{userId2}}",
+            "scenario": "DeleteUserWithNewuserId2",
+            "statuscode": 200,
+            "Content-Type": "application/json"
+          },
+          {
+            "endpoint": "users/{{userId3}}",
+            "scenario": "DeleteUserWithNewuserId3",
+            "statuscode": 200,
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "ByRoleId",
+        "data": [
+          {
+            "endpoint": "/users/roles",
+            "expectedStatusCode": 200,
+            "expectedStatusLine": "OK",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "ByRoleIdinv",
+        "data": [
+          {
+            "scenario": "Get user with invalid RoleId",
+            "endpoint": "/users/roles",
+            "expectedStatusCode": 404,
+            "expectedStatusLine": "Not Found",
+            "Content-Type": "application/json",
+            "RoleIdinv": "206"
+          },
+          {
+            "scenario": "Get a User with valid Role Id with invalid endpoint",
+            "endpoint": "/users",
+            "expectedStatusCode": 404,
+            "expectedStatusLine": "Not Found",
+            "Content-Type": "application/json",
+            "RoleIdinv": "R03"
+          },
+          {
+            "scenario": "Get a User with blank Role Id with valid endpoint",
+            "endpoint": "/users/roles",
+            "expectedStatusCode": 404,
+            "expectedStatusLine": "Not Found",
+            "Content-Type": "application/json",
+            "RoleIdinv": "R016"
+          }
+        ]
+      },
+      {
+        "name": "RoleIdPost",
+        "data": [
+          {
+            "scenario": "User with valid roleid with other request method",
+            "endpoint": "/users/roles",
+            "method": "POST",
+            "expectedStatusCode": 405,
+            "expectedStatusLine": "Method Not Allowed",
+            "Content-Type": "application/json",
+            "RoleIdinv": "R01"
+          }
+        ]
+      },
+      {
+        "name": "ByProgramId",
+        "data": [
+          {
+            "endpoint": "/users/programs",
+            "expectedStatusCode": 200,
+            "expectedStatusLine": "OK",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "ByProgramIdInvalid",
+        "data": [
+          {
+            "scenario": "Get user with invalid program id",
+            "endpoint": "/users/programs",
+            "expectedStatusCode": 404,
+            "expectedStatusLine": "Not Found",
+            "Content-Type": "text/plain;charset=UTF-8",
+            "programIdinv": "p323"
+          },
+          {
+            "scenario": "Get a user with valid program Id with invalid endpoint",
+            "endpoint": "/users/program",
+            "expectedStatusCode": 404,
+            "expectedStatusLine": "Not Found",
+            "Content-Type": "text/plain;charset=UTF-8",
+            "programIdinv": "5757"
+          },
+          {
+            "scenario": "Get a user with blank program Id with valid endpoint",
+            "endpoint": "/users/program",
+            "expectedStatusCode": 404,
+            "expectedStatusLine": "Not Found",
+            "Content-Type": "text/plain;charset=UTF-8",
+            "programIdinv": ""
+          }
+        ]
+      },
+      {
+        "name": "ByprogramIdPut",
+        "data": [
+          {
+            "scenario": "User with valid roleid with other request method",
+            "endpoint": "/users/programs",
+            "method": "POST",
+            "expectedStatusCode": 405,
+            "expectedStatusLine": "Method Not Allowed",
+            "Content-Type": "application/json",
+            "RoleIdinv": "R01"
+          }
+        ]
+      },
+      {
+        "name": "ByBatchId",
+        "data": [
+          {
+            "endpoint": "/users/programBatch",
+            "expectedStatusCode": 200,
+            "expectedStatusLine": "OK",
+            "Content-Type": "application/json"
+          }
+        ]
+      },
+      {
+        "name": "ByBatchIdInvalid",
+        "data": [
+          {
+            "scenario": "Get user with invalid Batch Id",
+            "endpoint": "/users/programBatch",
+            "expectedStatusCode": 404,
+            "expectedStatusLine": "Not Found",
+            "Content-Type": "text/plain;charset=UTF-8",
+            "batchIdinv": "8786"
+          },
+          {
+            "scenario": "Get a User with valid Batch Id with invalid endpoint",
+            "endpoint": "/users/programBatc",
+            "expectedStatusCode": 404,
+            "expectedStatusLine": "Not Found",
+            "Content-Type": "text/plain;charset=UTF-8",
+            "batchIdinv": "8451"
+          },
+          {
+            "scenario": "Get a User with blank Batch Id with valid endpoint",
+            "endpoint": "/users/programBatch",
+            "expectedStatusCode": 404,
+            "expectedStatusLine": "Not Found",
+            "Content-Type": "text/plain;charset=UTF-8",
+            "batchIdinv": ""
+          },
+          {
+            "name": "ByBatchIdPost",
+            "data": [
+              {
+                "scenario": "Get a User with valid endpoint with different request method",
+                "endpoint": "/users/programs",
+                "method": "POST",
+                "expectedStatusCode": 405,
+                "expectedStatusLine": "Method Not Allowed",
+                "Content-Type": "text/plain;charset=UTF-8"
+              }
+            ]
+          },
+          {
+            "name": "UserDetailsById",
+            "data": [
+              {
+                "endpoint": "/users/details",
+                "expectedStatusCode": 200,
+                "expectedStatusLine": "OK",
+                "Content-Type": "text/plain;charset=UTF-8"
+              }
+            ]
+          },
+          {
+            "name": "UserDetailsByIdInvalid",
+            "data": [
+              {
+                "scenario": "Get user with invalid Id",
+                "endpoint": "/users/details",
+                "expectedStatusCode": 404,
+                "expectedStatusLine": "Not Found",
+                "Content-Type": "text/plain;charset=UTF-8",
+                "id": "365"
+              },
+              {
+                "scenario": "Get a User with blank Id with valid endpoint",
+                "endpoint": "/users/details",
+                "expectedStatusCode": 400,
+                "expectedStatusLine": "Bad Request",
+                "Content-Type": "text/plain;charset=UTF-8",
+                "id": ""
+              }
+            ]
+          },
+          {
+            "name": "UserDetailsByIdPut",
+            "data": [
+              {
+                "scenario": "Get a User with valid endpoint with different request method",
+                "endpoint": "/users/details",
+                "expectedStatusCode": 405,
+                "expectedStatusLine": "Method Not Allowed",
+                "Content-Type": "text/plain;charset=UTF-8"
+              }
+            ]
+          },
+          {
+            "name": "CountByStatus",
+            "data": [
+              {
+                "endpoint": "/users/byStatus",
+                "expectedStatusCode": 200,
+                "expectedStatusLine": "OK",
+                "Content-Type": "application/json",
+                "id": "R04"
+              }
+            ]
+          },
+          {
+            "name": "StatusByRoleIdAll",
+            "data": [
+              {
+                "scenario": "User with status id all",
+                "endpoint": "/users/byStatus",
+                "expectedStatusCode": 200,
+                "expectedStatusLine": "OK",
+                "Content-Type": "application/json",
+                "id": "all"
+              },
+              {
+                "scenario": "User with status id validId",
+                "endpoint": "/users/byStatus",
+                "expectedStatusCode": 200,
+                "expectedStatusLine": "OK",
+                "Content-Type": "application/json",
+                "id": "R04"
+              }
+            ]
+          },
+          {
+            "name": "StatusByRoleIdInv",
+            "data": [
+              {
+                "scenario": "Get a User with valid Id with invalid endpoint",
+                "endpoint": "/users/byStatu",
+                "expectedStatusCode": 404,
+                "expectedStatusLine": "Not Found",
+                "Content-Type": "text/plain;charset=UTF-8",
+                "id": "R04"
+              },
+              {
+                "scenario": "Get a User with BlankId with invalid endpoint",
+                "endpoint": "/users/byStatus",
+                "expectedStatusCode": 404,
+                "expectedStatusLine": "Not Found",
+                "Content-Type": "text/plain;charset=UTF-8",
+                "id": ""
+              }
+            ]
+          },
+          {
+            "name": "ByStatusRoleIdPost",
+            "data": [
+              {
+                "scenario": "Get a User with valid endpoint with different request method",
+                "endpoint": "/users/invalidendpoint/{validId}",
+                "method": "POST",
+                "expectedStatusCode": 404,
+                "expectedStatusLine": "Not Found",
+                "Content-Type": "text/plain;charset=UTF-8",
+                "id": "R06"
+              }
+            ]
+          },
+          {
+            "name": "ActiveUsers",
+            "data": [
+              {
+                "endpoint": "/users/activeUsers",
+                "expectedStatusCode": 200,
+                "expectedStatusLine": "OK",
+                "Content-Type": "application/json"
+              },
+              {
+                "endpoint": "/users/activeUs",
+                "expectedStatusCode": 404,
+                "expectedStatusLine": "Not Found",
+                "Content-Type": "application/json"
+              }
+            ]
+          },
+          {
+            "name": "ActiveUsersPost",
+            "data": [
+              {
+                "scenario": "Get a User with valid endpoint with different request method",
+                "endpoint": "/users/activeUsers",
+                "method": "POST",
+                "expectedStatusCode": 405,
+                "expectedStatusLine": "Method Not Allowed",
+                "Content-Type": "application/json"
+              }
+            ]
+          },
+          {
+            "name": "FetchEmail",
+            "data": [
+              {
+                "endpoint": "/fetch-emails",
+                "expectedStatusCode": 200,
+                "expectedStatusLine": "OK",
+                "Content-Type": "application/json"
+              },
+              {
+                "endpoint": "/fetch-email",
+                "method": "GET",
+                "expectedStatusCode": 404,
+                "expectedStatusLine": "Not Found",
+                "Content-Type": "text/plain;charset=UTF-8"
+              }
+            ]
+          },
+          {
+            "name": "PostFetchEmail",
+            "data": [
+              {
+                "endpoint": "/fetch-emails",
+                "method": "POST",
+                "expectedStatusCode": 405,
+                "expectedStatusLine": "Method Not Allowed",
+                "Content-Type": "text/plain;charset=UTF-8"
+              }
+            ]
+          },
+          {
+            "name": "CreateClassSchedule",
+            "data": [
+              {
+                "endpoint": "/CreateClassSchedule",
+                "classNo": 1,
+                "classDate": "2025-05-06T19:04:41.220Z",
+                "classTopic": "DS111",
+                "classStatus": "Active",
+                "classScheduledDates": "2025-04-06T19:04:41.220Z"
+              }
+            ]
+          },
+          {
+            "name": "UpdateClassSchedule",
+            "data": [
+              {
+                "endpoint": "/updateClass",
+                "classNo": 1,
+                "classDate": "2025-07-06T19:04:41.220Z",
+                "classTopic": "DS51",
+                "classStatus": "updated",
+                "classScheduledDates": "2025-09-06T19:04:41.220Z"
+              }
+            ]
+          },
+          {
+            "name": "UpdateClassRecordingPath-200",
+            "data": [
+              {
+                "endpoint": "/updateClassrecording",
+                "expectedStatusCode": 200
+              }
+            ]
+          },
+          {
+            "name": "GetAllClasses",
+            "data": [
+              {
+                "endpoint": "/allClasses",
+                "statuscode": 200,
+                "Connection": "keep-alive",
+                "Content-Type": "application/json"
+              }
+            ]
+          },
+          {
+            "name": "GetUpcomingClassesForStudent",
+            "data": [
+              {
+                "endpoint": "/upcomingClasses",
+                "statuscode": 200,
+                "Connection": "keep-alive",
+                "Content-Type": "application/json"
+              }
+            ]
+          },
+          {
+            "name": "GetAllClassRecordings",
+            "data": [
+              {
+                "endpoint": "/classrecordings",
+                "statuscode": 200,
+                "Connection": "keep-alive",
+                "Content-Type": "application/json"
+              }
+            ]
+          },
+          {
+            "name": "GetClassesByBatchID",
+            "data": [
+              {
+                "endpoint": "/classesbyBatch",
+                "statuscode": 200,
+                "Connection": "keep-alive",
+                "Content-Type": "application/json"
+              },
+              {
+                "endpoint": "/classesbyBatches",
+                "statuscode": 404,
+                "Connection": "keep-alive"
+              }
+            ]
+          },
+          {
+            "name": "GetClassesByStaffID",
+            "data": [
+              {
+                "endpoint": "/classesByStaff",
+                "statuscode": 200,
+                "Connection": "keep-alive",
+                "Content-Type": "application/json"
+              },
+              {
+                "endpoint": "/classesByStaffU03",
+                "statuscode": 404,
+                "Connection": "keep-alive"
+              }
+            ]
+          },
+          {
+            "name": "GetClassesByTopic",
+            "data": [
+              {
+                "endpoint": "/classes",
+                "statuscode": 200,
+                "Connection": "keep-alive",
+                "Content-Type": "application/json",
+                "topic": "DA"
+              },
+              {
+                "endpoint": "/classesByTopicU03",
+                "statuscode": 404,
+                "Connection": "keep-alive"
+              }
+            ]
+          },
+          {
+            "name": "GetClassRecordingsByClassID",
+            "data": [
+              {
+                "endpoint": "/classRecordings",
+                "statuscode": 200,
+                "Connection": "keep-alive",
+                "Content-Type": "application/json"
+              },
+              {
+                "endpoint": "/classesRecoordingsByStaffU03",
+                "statuscode": 404,
+                "Connection": "keep-alive"
+              }
+            ]
+          },
+          {
+            "name": "GetClassRecordingsByBatchID",
+            "data": [
+              {
+                "endpoint": "/batchRecordings",
+                "statuscode": 200,
+                "Connection": "keep-alive",
+                "Content-Type": "application/json"
+              },
+              {
+                "endpoint": "/batchRecording1243",
+                "statuscode": 404,
+                "Connection": "keep-alive"
+              }
+            ]
+          },
+          {
+            "name": "DownloadClassRecordings",
+            "data": [
+              {
+                "endpoint": "/download",
+                "statuscode": 200,
+                "Connection": "keep-alive",
+                "Content-Type": "application/json"
+              },
+              {
+                "endpoint": "/downloadRecording1243",
+                "statuscode": 404,
+                "Connection": "keep-alive"
+              }
+            ]
+          },
+          {
+            "name": "Logout",
+            "data": [
+              {
+                "endpoint": "/logoutlms",
+                "method": "GET",
+                "expectedStatusCode": 200,
+                "expectedStatusLine": "OK",
+                "Content-Type": "application/json"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
