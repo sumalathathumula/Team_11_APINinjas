@@ -479,6 +479,28 @@
         ]
       },
       {
+        "name": "CreateUserWithRoleRequiredFields",
+        "data": [
+          {
+            "endpoint": "users/roleStatus",
+            "scenario": "ValidDataWithRequiredFieldsCreateUser",
+            "userFirstName": "Jon",
+            "userLastName": "Joseph",
+            "userPhoneNumber": "+91 1236664670",
+            "userRoleMaps": [
+              {
+                "roleId": "R03",
+                "userRoleStatus": "Active"
+              }
+            ],
+            "userTimeZone": "EST",
+            "userVisaStatus": "H4",
+            "expStatuscode": 201,
+            "expContentType": "application/json"
+          }
+        ]
+      },
+      {
         "name": "CreateUserWithRole",
         "data": [
           {
