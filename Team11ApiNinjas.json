@@ -65,7 +65,7 @@
         "data": [
           {
             "endpoint": "saveprogram",
-            "programName": "program-TenthAprilTwohundredtwentyfff",
+            "programName": "program-TenthAprilTwohundredtwentyJJJJ",
             "programDescription": "Test Description",
             "programStatus": "Active"
           }
@@ -76,7 +76,7 @@
         "data": [
           {
             "endpoint": "saveprogram",
-            "programName": "program-ToBeDeletedthreehundredfff",
+            "programName": "program-ToBeDeletedthreehundredJJJ",
             "programDescription": "electronicTest",
             "programStatus": "Active"
           }
@@ -120,8 +120,8 @@
         "data": [
           {
             "endpoint": "program/{{programName}}",
-            "programName": "program-TenthAprilTwohundredtwentyfff",
-            "programUpdatedDescription": "electronicTestUpdate-12",
+            "programName": "program-TenthAprilTwohundredtwentyJJJJ",
+            "programUpdatedDescription": "electronicTestUpdate-12JJJ",
             "programStatus": "Active"
           }
         ]
@@ -153,7 +153,7 @@
         "data": [
           {
             "endpoint": "putprogram/{{programId}}",
-            "programUpdatedDescription": "electronicTestUpdate-28",
+            "programUpdatedDescription": "electronicTestUpdate-28JJJ",
             "programStatus": "Active"
           }
         ]
@@ -240,7 +240,7 @@
             "statuscode": 201,
             "Connection": "keep-alive",
             "Content-Type": "application/json",
-            "batchName": "Elecrolytedigitaltwothreefff",
+            "batchName": "ElecrolytedigitaltwothreeJJJJ",
             "batchDescription": "test electronic356",
             "batchStatus": "Active",
             "batchNoOfClasses": 10
@@ -266,8 +266,8 @@
             "statuscode": 200,
             "Connection": "keep-alive",
             "Content-Type": "application/json",
-            "batchName": "Electrolytedigitalmediaffff",
-            "batchDescription": "testelecic",
+            "batchName": "ElectrolytedigitalmediaJJJJ",
+            "batchDescription": "testelecicJJJJ",
             "batchStatus": "Active",
             "batchNoOfClasses": 10
           }
